@@ -1,0 +1,55 @@
+#include<stdio.h>
+
+#define SIZE 5
+
+void mean(int array1[],int size);
+void median(int array1[],int size);
+int getArray(int array1[],int size);
+void bubblesort(int array1[],int size);
+
+main(){
+int array[SIZE]={0};
+getArray(array,SIZE);
+mean(array,SIZE);
+median(array,SIZE);
+}
+
+int getArray(int array1[],int size){
+int i;
+for(i=0;i<size;i++){
+    printf("Enter the Element:\n");
+    scanf("%d",&array1[i]);
+    }
+    return;
+}
+
+void mean(int array1[],int size){
+int i=0,total=0;
+for(i=0;i<size;i++){
+        total+= array1[i];
+    }
+printf("The mean is:%d\n",(total/size));
+return;
+}
+
+void median(int array1[],int size){
+    bubblesort(array1,size);
+    printf("The median is:%d\n",array1[2]);
+
+
+
+}
+void bubblesort(int array1[],int size){
+int i,j,temp=0;
+for(i=0;i<size;i++){
+    for(j=0;j<size-1;j++){
+        if(array1[j]>array1[j+1]){
+                temp = array1[i];
+                array1[i]= array1[i+1];
+                array1[i]=temp;
+
+        }
+    }
+}
+return;
+}
